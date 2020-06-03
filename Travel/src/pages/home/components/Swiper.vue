@@ -1,6 +1,6 @@
 <template>
 <div class="wrapper">
-    <swiper ref="mySwiper" :options="swiperOptions">
+    <swiper :options="swiperOptions">
         <swiper-slide v-for="item of SwiperImgList" :key="item.id">
             <img class="swiper-img"  :src="item.imgUrl" />
         </swiper-slide>
@@ -17,10 +17,6 @@ export default {
       swiperOptions: {
         pagination: '.swiper-pagination',
         loop: true
-        // pagination: {
-        //   el: '.swiper-pagination'
-        // }
-        // Some Swiper option/callback...
       },
       SwiperImgList: [{
         id: '0001',
@@ -36,21 +32,12 @@ export default {
         imgUrl: 'http://source.qunarzz.com/site/images/wns/20200602_qunar_dujia_homepage_750x192_6.jpg'
       }]
     }
-  },
-  computed: {
-    swiper () {
-      return this.$refs.mySwiper.$swiper
-    }
   }
-  //   ,
-  //   mounted () {
-  //     console.log('Current Swiper instance object', this.swiper)
-  //     this.swiper.slideTo(3, 1000, false)
-  //   }
 }
 </script>
 
 <style lang="stylus" scoped>
+    @import '~@styles/varibles.styl'
     .wrapper >>> .swiper-pagination-bullet-active
         background #ffffff
     .wrapper
@@ -58,7 +45,7 @@ export default {
         width 100%
         height 0
         padding-bottom 25.73%
-        background #eeeeee
+        background $bgColor
         .swiper-img
             width 100%
 </style>
