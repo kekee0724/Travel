@@ -1,5 +1,6 @@
 <template>
 <div class="icons">
+    <!-- :options="swiperOptions -->
     <swiper>
         <swiper-slide v-for="(page,index) of pages" :key="index">
             <div class="icon" v-for="item of page" :key="item.id">
@@ -10,6 +11,7 @@
                 </div>
             </div>
         </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 </div>
 </template>
@@ -24,57 +26,45 @@ export default {
         loop: true
       },
       IconList: [{
-        id: '0001',
-        iconfont: '&#xe678;',
-        text: '周边游'
-      }, {
-        id: '0002',
-        iconfont: '&#xe650;',
-        text: '出境游'
-      }, {
-        id: '0003',
-        iconfont: '&#xe852;',
-        text: '国内游'
-      }, {
-        id: '0004',
-        iconfont: '&#xe614;',
-        text: '一日游'
-      }, {
-        id: '0005',
-        iconfont: '&#xe619;',
-        text: '签证'
-      }, {
-        id: '0006',
-        iconfont: '&#xe609;',
-        text: 'Wi-Fi'
-      }, {
         id: '101',
-        imgUrl: 'https://imgs.qunarzz.com/vc/fd/55/94/6c7152c2a8b35a9c49bb26ea25.png_92.png',
-        text: '主题游'
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
+        text: '景点门票'
       }, {
         id: '102',
-        imgUrl: 'https://imgs.qunarzz.com/vc/eb/d9/1b/e24bca3f1ef6ae6ebdee15e4ca.png_92.png',
-        text: '徒步登山'
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
+        text: '一日游'
       }, {
         id: '103',
-        imgUrl: 'https://imgs.qunarzz.com/vc/c8/01/32/8f6e29b7b6ce0a807742c2587a.png_92.png',
-        text: '深度体验'
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
+        text: '户部巷'
       }, {
         id: '104',
-        imgUrl: 'https://imgs.qunarzz.com/vc/c3/f2/54/2e1c8f9403de1ed28895c9ffa4.png_92.png',
-        text: '亲子.游学'
+        imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
+        text: '自然风光'
       }, {
         id: '105',
-        imgUrl: 'https://imgs.qunarzz.com/vc/ea/a3/be/56cdbe6026e59f876283b4414a.png_92.png',
-        text: '滑雪'
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
+        text: '踏青赏花'
       }, {
         id: '106',
-        imgUrl: 'https://imgs.qunarzz.com/vc/68/4a/91/b7f09964d1e7a6280cca361c46.png_92.png',
-        text: '体验潜水'
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
+        text: '武汉必游'
       }, {
         id: '107',
-        imgUrl: 'https://imgs.qunarzz.com/vc/68/4a/91/b7f09964d1e7a6280cca361c46.png_92.png',
-        text: '007'
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png',
+        text: '三峡风光'
+      }, {
+        id: '108',
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
+        text: '武汉欢乐谷'
+      }, {
+        id: '109',
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
+        text: '极地海洋'
+      }, {
+        id: '110',
+        imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/17/99402a22ce4af302.png',
+        text: '东湖绿道'
       }]
     }
   },
@@ -82,7 +72,7 @@ export default {
     pages () {
       const pages = []
       this.IconList.forEach((item, index) => {
-        const page = Math.floor(index / 12)
+        const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
         }
@@ -99,38 +89,41 @@ export default {
     @import '~@styles/mixins.styl'
     .icons >>> .swiper-container
         height 0
-        padding-bottom 60%
-    // .icons
-    //     overflow hidden
-    //     height 0
-    //     padding-bottom 33.33%
-    .icon
-        position relative
+        padding-bottom 42%
+    .icons >>> .swiper-pagination-bullet-active
+        background #ffffff
+    .icons
+        margin-top .1rem
         // overflow hidden
-        float left
-        width 16.66%
-        padding-bottom 16.66%
-        .icon-img
-            position absolute
-            top 0
-            left 0
-            right 0
-            bottom .44rem
-            .icon-img-content
-                margin 0
-                height 100%
-            .icon-iconfont
-                margin 0
-                height 100%
+        // height 0
+        // padding-bottom 33.33%
+        .icon
+            position relative
+            // overflow hidden
+            float left
+            width 25%
+            padding-bottom 20.75%
+            .icon-img
+                position absolute
+                top 0
+                left 0
+                right 0
+                bottom .44rem
+                .icon-img-content
+                    margin 0
+                    height 100%
+                .icon-iconfont
+                    margin 0
+                    height 100%
+                    text-align center
+                    font-size .75rem
+            .icon-desc
+                position absolute
+                left 0
+                right 0
+                height .44rem
+                line-height .44rem
                 text-align center
-                font-size .75rem
-        .icon-desc
-            position absolute
-            left 0
-            right 0
-            height .44rem
-            line-height .44rem
-            text-align center
-            color $darkTextColor
-            ellipsis()
+                color $darkTextColor
+                ellipsis()
  </style>
