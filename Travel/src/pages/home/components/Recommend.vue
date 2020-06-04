@@ -5,7 +5,7 @@
         猜你喜欢
     </div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of recommends" :key="item.id">
                 <div>
                     <img class="item-img" :src="item.imgUrl" alt="item.title">
                 </div>
@@ -44,6 +44,9 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    recommends: Array
+  },
   data () {
     return {
       recommendList: [{

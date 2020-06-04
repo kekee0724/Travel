@@ -4,7 +4,7 @@
         周末去哪儿
     </div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of weekends" :key="item.id">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl" alt="item.title">
                 </div>
@@ -24,9 +24,12 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    weekends: Array
+  },
   data () {
     return {
-      recommendList: [{
+      weekendList: [{
         id: '0001',
         imgUrl: 'https://imgs.qunarzz.com/sight/source/1505/d5/abe8a48a6ef8bf.jpg_r_640x214_7c41cc81.jpg',
         title: '武汉必打卡',
@@ -61,7 +64,7 @@ export default {
     @import '~@styles/varibles.styl'
     @import '~@styles/mixins.styl'
     .title
-        margin-top .1rem
+        // margin-top .1rem
         text-indent .2rem
         text-align left
         height: .44rem;

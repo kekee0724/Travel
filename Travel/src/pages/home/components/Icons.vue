@@ -1,13 +1,13 @@
 <template>
 <div class="icons">
     <!-- :options="swiperOptions -->
-    <swiper>
+    <swiper :options="swiperOptions" v-if="showSwiper">
         <swiper-slide v-for="(page,index) of pages" :key="index">
             <div class="icon" v-for="item of page" :key="item.id">
                 <div class="icon-img">
                     <img v-if="typeof item.iconfont==='undefined'" class="icon-img-content" :src="item.imgUrl" />
                     <div v-else-if="typeof item.imgUrl==='undefined'" class="iconfont icon-iconfont" v-html="item.iconfont"></div>
-                    <p class="icon-desc" v-text="item.text"></p>
+                    <p class="icon-desc" v-text="item.desc"></p>
                 </div>
             </div>
         </swiper-slide>
@@ -19,59 +19,62 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    icons: Array
+  },
   data () {
     return {
       swiperOptions: {
         pagination: '.swiper-pagination',
         loop: true
       },
-      IconList: [{
+      iconList: [{
         id: '101',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        text: '景点门票'
+        desc: '景点门票'
       }, {
         id: '102',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-        text: '一日游'
+        desc: '一日游'
       }, {
         id: '103',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-        text: '户部巷'
+        desc: '户部巷'
       }, {
         id: '104',
         imgUrl: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
-        text: '自然风光'
+        desc: '自然风光'
       }, {
         id: '105',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/bd/9f7b9b2b60c1502.png',
-        text: '踏青赏花'
+        desc: '踏青赏花'
       }, {
         id: '106',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        text: '武汉必游'
+        desc: '武汉必游'
       }, {
         id: '107',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/b8/c5dcdb58deec2402.png',
-        text: '三峡风光'
+        desc: '三峡风光'
       }, {
         id: '108',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/b1/528a9e80403b8c02.png',
-        text: '武汉欢乐谷'
+        desc: '武汉欢乐谷'
       }, {
         id: '109',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/50/26ffa31b56646402.png',
-        text: '极地海洋'
+        desc: '极地海洋'
       }, {
         id: '110',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/17/99402a22ce4af302.png',
-        text: '东湖绿道'
+        desc: '东湖绿道'
       }]
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.IconList.forEach((item, index) => {
+      this.icons.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -79,6 +82,9 @@ export default {
         pages[page].push(item)
       })
       return pages
+    },
+    showSwiper () {
+      return this.icons.length
     }
   }
 }
