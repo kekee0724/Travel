@@ -1,12 +1,12 @@
 <template>
 <div id="app">
     <!-- <img src="./assets/logo.jpg"> -->
-    <div id="nav">
+    <!-- <div id="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/list">List</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/city">City</router-link>
-    </div>
+    </div> -->
     <!-- 显示当前路由地址所对应的内容 -->
     <router-view />
 </div>
