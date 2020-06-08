@@ -3,6 +3,8 @@
       <city-header></city-header>
       <div id="city-container">
         <city-search></city-search>
+        <city-list></city-list>
+        <city-alphabet></city-alphabet>
       </div>
     </div>
 </template>
@@ -10,16 +12,16 @@
 <script>
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
-// import HomeSwiper from './components/Swiper'
-// import HomeIcons from './components/Icons'
-// import HomeRecommend from './components/Recommend'
-// import HomeWeekend from './components/Weekend'
+import CityList from './components/List'
+import CityAlphabet from './components/Alphabet'
 // import axios from 'axios'
 export default {
   name: 'City',
   components: {
     CityHeader,
-    CitySearch
+    CitySearch,
+    CityList,
+    CityAlphabet
   },
   data () {
     return {
