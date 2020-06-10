@@ -12,77 +12,16 @@
     <div class="area">
         <div class="title">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">武汉</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">武汉</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">武汉</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">武汉</div>
+          <div class="button-wrapper" v-for="item of hot" :key="item.id">
+            <div class="button">{{item.name}}</div>
           </div>
         </div>
     </div>
-    <div class="area border-bottom">
-        <div class="title">A</div>
-        <ul>
+    <div class="area border-bottom" v-for="(item,key) of cities" :key="key">
+        <div class="title">{{key}}</div>
+        <ul v-for="i of item" :key="i.id">
           <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-        </ul>
-    </div>
-    <div class="area border-bottom">
-        <div class="title">B</div>
-        <ul>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-        </ul>
-    </div>
-        <div class="area border-bottom">
-        <div class="title">C</div>
-        <ul>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
-          </li>
-          <li class="item-list">
-            <div class="item">武汉</div>
+            <div class="item">{{i.name}}</div>
           </li>
         </ul>
     </div>
@@ -92,10 +31,12 @@
 
 <script>
 import BScroll from 'better-scroll'
-// let wrapper = document.querySelector('.wrapper')
-// let scroll = new BScroll(wrapper)
 export default {
   name: 'CityList',
+  props: {
+    'hot': Array,
+    'cities': Object
+  },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)
   }
