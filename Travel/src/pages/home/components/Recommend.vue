@@ -5,7 +5,7 @@
         猜你喜欢
     </div>
     <ul>
-        <li class="item border-bottom" v-for="item of recommends" :key="item.id">
+        <router-link tag="li" :to="'/detail/' + item.id" class="item border-bottom" v-for="item of recommends" :key="item.id">
                 <div>
                     <img class="item-img" :src="item.imgUrl" alt="item.title">
                 </div>
@@ -36,7 +36,7 @@
                         <span v-text="item.desc">来试试中国最高的弹射过山车吧~</span>
                     </div>
                 </div>
-        </li>
+        </router-link>
     </ul>
 </div>
 </template>
