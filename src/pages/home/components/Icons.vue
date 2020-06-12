@@ -44,6 +44,7 @@
 export default {
   name: 'HomeIcons',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     icons: Array
   },
   data () {

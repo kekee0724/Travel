@@ -70,8 +70,11 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     'hot': Array,
+    // eslint-disable-next-line vue/require-default-prop
     'cities': Object,
+    // eslint-disable-next-line vue/require-default-prop
     'letter': String
   },
   computed: {

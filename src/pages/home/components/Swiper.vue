@@ -25,6 +25,7 @@
 export default {
   name: 'HomeSwiper',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     swipers: Array
   },
   data () {

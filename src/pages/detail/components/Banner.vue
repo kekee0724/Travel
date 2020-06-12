@@ -37,8 +37,11 @@ export default {
     CommonFadeAnimation
   },
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     sightName: String,
+    // eslint-disable-next-line vue/require-default-prop
     bannerImg: String,
+    // eslint-disable-next-line vue/require-default-prop
     gallaryImgs: Array
   },
   data () {

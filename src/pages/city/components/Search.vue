@@ -49,6 +49,7 @@ import { mapMutations } from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     cities: Object
   },
   methods: {

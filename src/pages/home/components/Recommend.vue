@@ -71,6 +71,7 @@
 export default {
   name: 'HomeRecommend',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     recommends: Array
   },
   data () {

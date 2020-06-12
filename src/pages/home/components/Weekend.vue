@@ -36,6 +36,7 @@
 export default {
   name: 'HomeWeekend',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     weekends: Array
   },
   data () {
