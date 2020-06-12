@@ -6,7 +6,7 @@
         <div class="banner-title" v-text="sightName"></div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe692;</span>
-          39
+          {{this.gallaryImgs.length}}
         </div>
       </div>
     </div>
@@ -27,8 +27,7 @@ export default {
   props: {
     sightName: String,
     bannerImg: String,
-    gallaryImgs: Array,
-    categoryList: Array
+    gallaryImgs: Array
   },
   data () {
     return {
@@ -58,7 +57,7 @@ export default {
       right 0
       bottom 0
       line-height .6rem
-      color #666
+      color #fff
       background-image linear-gradient(top, rgba(0, 0, 0
         , 0), rgba(0, 0, 0, .8))
       .banner-title

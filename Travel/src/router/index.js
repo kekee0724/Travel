@@ -26,8 +26,12 @@ export default new Router({
     name: 'City',
     component: City
   }, {
-    path: '/detail',
+    path: '/detail/:id',
     name: 'Detail',
     component: Detail
-  }]
+  }],
+  scrollBehavior (to, from, savedPosition) {
+    // 滚动行为
+    return { x: 0, y: 0 }
+  }
 })
