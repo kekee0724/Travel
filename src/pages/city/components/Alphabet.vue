@@ -1,9 +1,18 @@
 <template>
-<ul class="list">
-    <li class="item" v-for="item of letters" :key="item" :ref="item" @click="handLetterClick" @touchstart.prevent="handleTouchStart" @touchmove="handleTouchMove" @touchend="handleTouchEnd">
-      {{item}}
+  <ul class="list">
+    <li
+      class="item"
+      v-for="item of letters"
+      :key="item"
+      :ref="item"
+      @click="handLetterClick"
+      @touchstart.prevent="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+    >
+      {{ item }}
     </li>
-</ul>
+  </ul>
 </template>
 
 <script>

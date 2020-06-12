@@ -1,19 +1,43 @@
 <template>
-<div class="icons">
+  <div class="icons">
     <!-- :options="swiperOptions -->
-    <swiper :options="swiperOptions" v-if="showSwiper">
-        <swiper-slide v-for="(page,index) of pages" :key="index">
-            <div class="icon" v-for="item of page" :key="item.id">
-                <div class="icon-img">
-                    <img v-if="typeof item.iconfont==='undefined'" class="icon-img-content" :src="item.imgUrl" />
-                    <div v-else-if="typeof item.imgUrl==='undefined'" class="iconfont icon-iconfont" v-html="item.iconfont"></div>
-                    <p class="icon-desc" v-text="item.desc"></p>
-                </div>
-            </div>
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+    <swiper
+      :options="swiperOptions"
+      v-if="showSwiper"
+    >
+      <swiper-slide
+        v-for="(page,index) of pages"
+        :key="index"
+      >
+        <div
+          class="icon"
+          v-for="item of page"
+          :key="item.id"
+        >
+          <div class="icon-img">
+            <img
+              v-if="typeof item.iconfont==='undefined'"
+              class="icon-img-content"
+              :src="item.imgUrl"
+            >
+            <div
+              v-else-if="typeof item.imgUrl==='undefined'"
+              class="iconfont icon-iconfont"
+              v-html="item.iconfont"
+            />
+            <p
+              class="icon-desc"
+              v-text="item.desc"
+            />
+          </div>
+        </div>
+      </swiper-slide>
+      <div
+        class="swiper-pagination"
+        slot="pagination"
+      />
     </swiper>
-</div>
+  </div>
 </template>
 
 <script>

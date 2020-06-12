@@ -56,11 +56,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#city-container{
-              -webkit-tap-highlight-color: transparent;
-              font-family: Arial,"Microsoft Yahei","Helvetica Neue",Helvetica,sans-serif;
-              color: #212121;
-              font-size: .28em;
-              line-height: 1;
-}
+  #city-container {
+    -webkit-tap-highlight-color: transparent;
+    font-family: Arial,"Microsoft Yahei","Helvetica Neue",Helvetica,sans-serif;
+    color: #212121;
+    // font-size: .28em;
+    line-height: 1;
+  }
 </style>

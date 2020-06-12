@@ -1,44 +1,70 @@
 <template>
-<div>
+  <div>
     <div class="title">
-        <img class="title-img" src="https://imgs.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="猜你喜欢">
-        猜你喜欢
+      <img
+        class="title-img"
+        src="https://imgs.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png"
+        alt="猜你喜欢"
+      >
+      猜你喜欢
     </div>
     <ul>
-        <router-link tag="li" :to="'/detail/' + item.id" class="item border-bottom" v-for="item of recommends" :key="item.id">
-                <div>
-                    <img class="item-img" :src="item.imgUrl" alt="item.title">
-                </div>
-                <div class="item-info">
-                    <div class="item-title" v-text="item.title">
-                        武汉欢乐谷
-                    </div>
-                    <div class="item-comment">
-                        <span class="item-comment-star">
-                                
-                        </span>
-                        <span class="item-comment-num" v-text="item.comment">
-                            26417条评论
-                        </span>
-                    </div>
-                    <div class="item-price-address">
-                        <span style="color: #ff8300">
-                            ¥
-                            <em class="item-price" v-text="item.price">
-                                388
-                            </em>
-                        </span>
-                        起
-                        <span><button class="item-button">查看详情</button></span>
-                        <span class="item-address" v-text="item.address">青山区</span>
-                    </div>
-                    <div class="item-desc">
-                        <span v-text="item.desc">来试试中国最高的弹射过山车吧~</span>
-                    </div>
-                </div>
-        </router-link>
+      <router-link
+        tag="li"
+        :to="'/detail/' + item.id"
+        class="item border-bottom"
+        v-for="item of recommends"
+        :key="item.id"
+      >
+        <div>
+          <img
+            class="item-img"
+            :src="item.imgUrl"
+            alt="item.title"
+          >
+        </div>
+        <div class="item-info">
+          <div
+            class="item-title"
+            v-text="item.title"
+          >
+            武汉欢乐谷
+          </div>
+          <div class="item-comment">
+            <span class="item-comment-star">
+              
+            </span>
+            <span
+              class="item-comment-num"
+              v-text="item.comment"
+            >
+              26417条评论
+            </span>
+          </div>
+          <div class="item-price-address">
+            <span style="color: #ff8300">
+              ¥
+              <em
+                class="item-price"
+                v-text="item.price"
+              >
+                388
+              </em>
+            </span>
+            起
+            <span><button class="item-button">查看详情</button></span>
+            <span
+              class="item-address"
+              v-text="item.address"
+            >青山区</span>
+          </div>
+          <div class="item-desc">
+            <span v-text="item.desc">来试试中国最高的弹射过山车吧~</span>
+          </div>
+        </div>
+      </router-link>
     </ul>
-</div>
+  </div>
 </template>
 
 <script>

@@ -1,21 +1,28 @@
 <template>
   <div>
     <div class="banner">
-      <img class="banner-img" :src="bannerImg" @click="handleClick"/>
+      <img
+        class="banner-img"
+        :src="bannerImg"
+        @click="handleClick"
+      >
       <div class="banner-info">
-        <div class="banner-title" v-text="sightName"></div>
+        <div
+          class="banner-title"
+          v-text="sightName"
+        />
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe692;</span>
-          {{this.gallaryImgs.length}}
+          {{ this.gallaryImgs.length }}
         </div>
       </div>
     </div>
     <common-fade-animation>
       <common-gallery
-      :gallaryImgs="gallaryImgs"
+        :gallary-imgs="gallaryImgs"
         v-show="showGallery"
-        @close="handleClick">
-      </common-gallery>
+        @close="handleClick"
+      />
     </common-fade-animation>
   </div>
 </template>

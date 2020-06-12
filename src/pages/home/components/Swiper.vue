@@ -1,12 +1,24 @@
 <template>
-<div class="wrapper">
-    <swiper :options="swiperOptions" v-if="showSwiper">
-        <swiper-slide v-for="item of swipers" :key="item.id">
-            <img class="swiper-img"  :src="item.imgUrl" />
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+  <div class="wrapper">
+    <swiper
+      :options="swiperOptions"
+      v-if="showSwiper"
+    >
+      <swiper-slide
+        v-for="item of swipers"
+        :key="item.id"
+      >
+        <img
+          class="swiper-img"
+          :src="item.imgUrl"
+        >
+      </swiper-slide>
+      <div
+        class="swiper-pagination"
+        slot="pagination"
+      />
     </swiper>
-</div>
+  </div>
 </template>
 
 <script>

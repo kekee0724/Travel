@@ -1,37 +1,66 @@
 <template>
-<div class="list" ref="wrapper">
-  <div>
-    <div class="area border-topbottom">
-        <div class="title">当前城市</div>
+  <div
+    class="list"
+    ref="wrapper"
+  >
+    <div>
+      <div class="area border-topbottom">
+        <div class="title">
+          当前城市
+        </div>
         <div class="button-list">
           <div class="button-wrapper">
             <div class="button">
               <!-- {{this.$store.state.city}} -->
-              {{this.currentCity}}
+              {{ this.currentCity }}
             </div>
           </div>
         </div>
-    </div>
-    <div class="area">
-        <div class="title">热门城市</div>
+      </div>
+      <div class="area">
+        <div class="title">
+          热门城市
+        </div>
         <div class="button-list">
-          <div class="button-wrapper"
+          <div
+            class="button-wrapper"
             v-for="item of hot"
-            :key="item.id">
-            <div class="button" @click="handleCityClick(item.name)">{{item.name}}</div>
+            :key="item.id"
+          >
+            <div
+              class="button"
+              @click="handleCityClick(item.name)"
+            >
+              {{ item.name }}
+            </div>
           </div>
         </div>
-    </div>
-    <div class="area border-bottom" v-for="(item,key) of cities" :key="key" :ref="key">
-        <div class="title">{{key}}</div>
-        <ul v-for="i of item" :key="i.id">
+      </div>
+      <div
+        class="area border-bottom"
+        v-for="(item,key) of cities"
+        :key="key"
+        :ref="key"
+      >
+        <div class="title">
+          {{ key }}
+        </div>
+        <ul
+          v-for="i of item"
+          :key="i.id"
+        >
           <li class="item-list">
-            <div class="item" @click="handleCityClick(i.name)">{{i.name}}</div>
+            <div
+              class="item"
+              @click="handleCityClick(i.name)"
+            >
+              {{ i.name }}
+            </div>
           </li>
         </ul>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -71,7 +100,7 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new BScroll(this.$refs.wrapper)
+    this.scroll = new BScroll(this.$refs.wrapper, { mouseWheel: true, click: true, tap: true })
   }
 }
 </script>

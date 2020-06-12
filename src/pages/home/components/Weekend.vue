@@ -1,24 +1,35 @@
 <template>
-<div>
+  <div>
     <div class="title">
-        周末去哪儿
+      周末去哪儿
     </div>
     <ul>
-        <li class="item border-bottom" v-for="item of weekends" :key="item.id">
-                <div class="item-img-wrapper">
-                    <img class="item-img" :src="item.imgUrl" alt="item.title">
-                </div>
-                <div class="item-info">
-                    <div class="item-title" v-text="item.title">
-                        武汉欢乐谷
-                    </div>
-                    <div class="item-desc">
-                        <span v-text="item.desc">来试试中国最高的弹射过山车吧~</span>
-                    </div>
-                </div>
-        </li>
+      <li
+        class="item border-bottom"
+        v-for="item of weekends"
+        :key="item.id"
+      >
+        <div class="item-img-wrapper">
+          <img
+            class="item-img"
+            :src="item.imgUrl"
+            alt="item.title"
+          >
+        </div>
+        <div class="item-info">
+          <div
+            class="item-title"
+            v-text="item.title"
+          >
+            武汉欢乐谷
+          </div>
+          <div class="item-desc">
+            <span v-text="item.desc">来试试中国最高的弹射过山车吧~</span>
+          </div>
+        </div>
+      </li>
     </ul>
-</div>
+  </div>
 </template>
 
 <script>

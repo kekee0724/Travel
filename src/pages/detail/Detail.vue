@@ -1,15 +1,15 @@
 <template>
-    <div>
-      <detail-banner
-       :sightName="sightName"
-       :bannerImg="bannerImg"
-       :gallaryImgs="gallaryImgs">
-      </detail-banner>
-      <detail-header></detail-header>
-      <div class="content">
-      <detail-list :categoryList="categoryList"></detail-list>
-      </div>
+  <div>
+    <detail-banner
+      :sight-name="sightName"
+      :banner-img="bannerImg"
+      :gallary-imgs="gallaryImgs"
+    />
+    <detail-header />
+    <div class="content">
+      <detail-list :category-list="categoryList" />
     </div>
+  </div>
 </template>
 
 <script>

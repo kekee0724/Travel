@@ -1,12 +1,19 @@
 <template>
-    <div>
-      <city-header></city-header>
-      <div id="city-container">
-        <city-search  :cities="cities"></city-search>
-        <city-list :cities="cities" :hot="hotCities" :letter="letter"></city-list>
-        <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
-      </div>
+  <div>
+    <city-header />
+    <div id="city-container">
+      <city-search :cities="cities" />
+      <city-list
+        :cities="cities"
+        :hot="hotCities"
+        :letter="letter"
+      />
+      <city-alphabet
+        :cities="cities"
+        @change="handleLetterChange"
+      />
     </div>
+  </div>
 </template>
 
 <script>
@@ -56,11 +63,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#city-container{
-              -webkit-tap-highlight-color: transparent;
-              font-family: Arial,"Microsoft Yahei","Helvetica Neue",Helvetica,sans-serif;
-              color: #212121;
-              font-size: .28em;
-              line-height: 1;
-}
+  #city-container {
+    -webkit-tap-highlight-color: transparent;
+    font-family: Arial,"Microsoft Yahei","Helvetica Neue",Helvetica,sans-serif;
+    color: #212121;
+    // font-size: .28em;
+    line-height: 1;
+  }
 </style>

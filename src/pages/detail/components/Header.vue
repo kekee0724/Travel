@@ -1,16 +1,29 @@
 <template>
   <div>
-      <router-link tag="div" to="/" class="header-abs" v-show="showABs">
-        <div class="iconfont header-abs-back">&#xe653;</div>
-      </router-link>
-      <div class="header-fixed" v-show="!showABs" :style="opacityStyle">
-        <div class="header-fixed-title">
-            <span>景点详情</span>
-            <router-link to="/">
-                <div class="iconfont header-fixed-back">&#xe653;</div>
-            </router-link>
-        </div>
+    <router-link
+      tag="div"
+      to="/"
+      class="header-abs"
+      v-show="showABs"
+    >
+      <div class="iconfont header-abs-back">
+        &#xe653;
       </div>
+    </router-link>
+    <div
+      class="header-fixed"
+      v-show="!showABs"
+      :style="opacityStyle"
+    >
+      <div class="header-fixed-title">
+        <span>景点详情</span>
+        <router-link to="/">
+          <div class="iconfont header-fixed-back">
+            &#xe653;
+          </div>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 

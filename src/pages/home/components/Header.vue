@@ -1,7 +1,12 @@
 <template>
-  <div id="header" class="header">
+  <div
+    id="header"
+    class="header"
+  >
     <div class="header-left">
-      <div class="iconfont back-icon">&#xe653;</div>
+      <div class="iconfont back-icon">
+        &#xe653;
+      </div>
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe603;</span>
@@ -10,7 +15,7 @@
     <router-link to="/city">
       <div class="header-right">
         <!-- {{city}} -->
-        {{doubleCity}}
+        {{ doubleCity }}
         <!-- {{this.$store.state.city}} -->
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>

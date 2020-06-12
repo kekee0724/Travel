@@ -1,14 +1,19 @@
 <template>
   <div>
-    <div class="item"
-    v-for="(item,index) of categoryList"
-    :key="index">
+    <div
+      class="item"
+      v-for="(item,index) of categoryList"
+      :key="index"
+    >
       <div class="item-title border-bottom">
-          <span class="item-title-icon"></span>
-          <span>{{item.title}}</span>
+        <span class="item-title-icon" />
+        <span>{{ item.title }}</span>
       </div>
-      <div v-if="item.children" class="item-children">
-        <detail-list :categoryList="item.children"></detail-list>
+      <div
+        v-if="item.children"
+        class="item-children"
+      >
+        <detail-list :category-list="item.children" />
       </div>
     </div>
   </div>

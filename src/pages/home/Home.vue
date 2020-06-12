@@ -1,11 +1,11 @@
 <template>
-<div>
-    <home-header></home-header>
-    <home-swiper :swipers="swiperList"></home-swiper>
-    <home-icons  :icons="iconList"></home-icons>
-    <home-recommend :recommends="recommendList"></home-recommend>
-    <home-weekend :weekends="weekendList"></home-weekend>
-</div>
+  <div>
+    <home-header />
+    <home-swiper :swipers="swiperList" />
+    <home-icons :icons="iconList" />
+    <home-recommend :recommends="recommendList" />
+    <home-weekend :weekends="weekendList" />
+  </div>
 </template>
 
 <script>

@@ -1,21 +1,46 @@
 <template>
-<div>
-  <div class="tab-con">
+  <div>
+    <div class="tab-con">
       <ul>
-          <li class="li active">境内</li>
-          <li class="li">境外·港澳台</li>
+        <li class="li active">
+          境内
+        </li>
+        <li class="li">
+          境外·港澳台
+        </li>
       </ul>
-  </div>
-  <div class="search">
-    <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音"/>
-  </div>
-  <div class="search-content" ref="search" v-show="keyword">
+    </div>
+    <div class="search">
+      <input
+        v-model="keyword"
+        class="search-input"
+        type="text"
+        placeholder="输入城市名或拼音"
+      >
+    </div>
+    <div
+      class="search-content"
+      ref="search"
+      v-show="keyword"
+    >
       <ul>
-          <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleCityClick(item.name)">{{item.name}}</li>
-          <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配城市</li>
+        <li
+          class="search-item border-bottom"
+          v-for="item of list"
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+        >
+          {{ item.name }}
+        </li>
+        <li
+          class="search-item border-bottom"
+          v-show="hasNoData"
+        >
+          没有找到匹配城市
+        </li>
       </ul>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
